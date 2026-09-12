@@ -132,11 +132,31 @@ function component_upper_bounds(A, c)
 end
 
 # ==========================================================================
-# run only case5_pjm
+# case selection: pass a key as the first CLI arg, e.g.
+#   julia --project=. reduced_qp_test.jl 24_ieee 60
+# (second arg is the time limit in seconds, default 60). Defaults to 5_pjm.
+# Every run's bounds + results are persisted under results/ so nothing is
+# lost when this script is re-invoked for the next case.
 # ==========================================================================
-case = "pglib_opf_case14_ieee.m"
+const CASE_MAP = Dict(
+    "5_pjm"    => "pglib_opf_case5_pjm.m",
+    "14_ieee"  => "pglib_opf_case14_ieee.m",
+    "24_ieee"  => "pglib_opf_case24_ieee_rts.m",
+    "30_as"    => "pglib_opf_case30_as.m",
+    "57_ieee"  => "pglib_opf_case57_ieee.m",
+    "60_c"     => "pglib_opf_case60_c.m",
+    "118_ieee" => "pglib_opf_case118_ieee.m",
+)
+
+casekey    = length(ARGS) >= 1 ? ARGS[1] : "5_pjm"
+time_limit = length(ARGS) >= 2 ? parse(Float64, ARGS[2]) : 60.0
+case       = CASE_MAP[casekey]
+
+results_dir = "results"
+isdir(results_dir) || mkdir(results_dir)
+
 println("="^78)
-println("Case: $case")
+println("Case: $case  (key=$casekey, time_limit=$(time_limit)s)")
 
 network_data       = pglib(case)
 basic_network_data = PowerModels.make_basic_network(network_data)
@@ -178,33 +198,84 @@ end
 # ==========================================================================
 # rerun the reduced QP with the exact LP-derived bounds 0 <= mu[i] <= M[i]
 # ==========================================================================
-res = solve_reduced_qp(A, B, c, Mvec; time_limit=60.0)
+res = solve_reduced_qp(A, B, c, Mvec; time_limit=time_limit)
 
 println()
 println("="^78)
 println("BOUNDED REDUCED QP RESULT: $case")
 println("="^78)
 
-if !res.feasible_slice
-    println("Slice {A'mu=0, mu>=0, c'mu=-1} is INFEASIBLE (status=$(res.status)).")
-else
-    rho = (res.gamma_inc isa Number && !isnan(res.gamma_inc) && res.gamma_inc > 0) ? 1.0 / res.gamma_inc : NaN
-    attack_norm = isnan(rho) ? NaN : sqrt(rho)
+logpath = joinpath(results_dir, "reduced_qp_$(casekey).txt")
+csvpath = joinpath(results_dir, "reduced_qp_summary.csv")
 
-    @printf("termination status = %s\n", res.status)
-    @printf("gamma_inc          = %.8g\n", res.gamma_inc)
-    @printf("gamma_bd           = %.8g\n", res.gamma_bd)
-    @printf("relative gap       = %.6g\n", res.gap)
-    @printf("node count         = %.0f\n", res.nodes)
-    @printf("runtime            = %.4f s\n", res.runtime)
-    println()
-    @printf("rho = 1/gamma      = %.8g\n", rho)
-    @printf("sqrt(rho)          = %.8g\n", attack_norm)
+open(logpath, "w") do io
+    println(io, "case = $case (key=$casekey)")
+    println(io, "num_mu = $num_mu")
+    println(io)
+    println(io, "--- per-component LP bounds M[i] = max mu[i] s.t. A'mu=0, c'mu=-1, mu>=0 ---")
+    for i in 1:num_mu
+        println(io, "  i=$i  M[i]=$(Mvec[i])")
+    end
+    println(io)
+    if isempty(unbounded_idx)
+        println(io, "No unbounded components.")
+    else
+        println(io, "UNBOUNDED components: $unbounded_idx")
+    end
+    println(io)
 
-    println()
-    println("--- feasibility verification (mu*) ---")
-    mu_star = res.mu
-    @printf("max(abs.(A' * mu*))  = %.6g\n", maximum(abs.(A' * mu_star)))
-    @printf("c' * mu*             = %.8g\n", dot(c, mu_star))
-    @printf("minimum(mu*)         = %.6g\n", minimum(mu_star))
+    if !res.feasible_slice
+        msg = "Slice {A'mu=0, mu>=0, c'mu=-1} is INFEASIBLE (status=$(res.status))."
+        println("$msg")
+        println(io, msg)
+    else
+        rho = (res.gamma_inc isa Number && !isnan(res.gamma_inc) && res.gamma_inc > 0) ? 1.0 / res.gamma_inc : NaN
+        attack_norm = isnan(rho) ? NaN : sqrt(rho)
+        mu_star  = res.mu
+        max_AtMu = maximum(abs.(A' * mu_star))
+        cmu      = dot(c, mu_star)
+        min_mu   = minimum(mu_star)
+
+        @printf("termination status = %s\n", res.status)
+        @printf("gamma_inc          = %.8g\n", res.gamma_inc)
+        @printf("gamma_bd           = %.8g\n", res.gamma_bd)
+        @printf("relative gap       = %.6g\n", res.gap)
+        @printf("node count         = %.0f\n", res.nodes)
+        @printf("runtime            = %.4f s\n", res.runtime)
+        println()
+        @printf("rho = 1/gamma      = %.8g\n", rho)
+        @printf("sqrt(rho)          = %.8g\n", attack_norm)
+        println()
+        println("--- feasibility verification (mu*) ---")
+        @printf("max(abs.(A' * mu*))  = %.6g\n", max_AtMu)
+        @printf("c' * mu*             = %.8g\n", cmu)
+        @printf("minimum(mu*)         = %.6g\n", min_mu)
+
+        @printf(io, "termination status = %s\n", res.status)
+        @printf(io, "gamma_inc          = %.8g\n", res.gamma_inc)
+        @printf(io, "gamma_bd           = %.8g\n", res.gamma_bd)
+        @printf(io, "relative gap       = %.6g\n", res.gap)
+        @printf(io, "node count         = %.0f\n", res.nodes)
+        @printf(io, "runtime            = %.4f s\n", res.runtime)
+        println(io)
+        @printf(io, "rho = 1/gamma      = %.8g\n", rho)
+        @printf(io, "sqrt(rho)          = %.8g\n", attack_norm)
+        println(io)
+        println(io, "--- feasibility verification (mu*) ---")
+        @printf(io, "max(abs.(A' * mu*))  = %.6g\n", max_AtMu)
+        @printf(io, "c' * mu*             = %.8g\n", cmu)
+        @printf(io, "minimum(mu*)         = %.6g\n", min_mu)
+
+        header_needed = !isfile(csvpath)
+        open(csvpath, "a") do cio
+            if header_needed
+                println(cio, "case,num_mu,status,time_limit_s,runtime_s,gamma_inc,gamma_bd,rel_gap,nodes,rho,sqrt_rho,max_AtMu,cTmu,min_mu")
+            end
+            println(cio, "$casekey,$num_mu,$(res.status),$time_limit,$(res.runtime),$(res.gamma_inc),$(res.gamma_bd),$(res.gap),$(res.nodes),$rho,$attack_norm,$max_AtMu,$cmu,$min_mu")
+        end
+    end
 end
+
+println()
+println("Saved: $logpath")
+println("Appended: $csvpath")

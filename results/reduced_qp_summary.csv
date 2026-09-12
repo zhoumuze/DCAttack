@@ -1,0 +1,2 @@
+case,num_mu,status,time_limit_s,runtime_s,gamma_inc,gamma_bd,rel_gap,nodes,rho,sqrt_rho,max_AtMu,cTmu,min_mu
+5_pjm,22,OPTIMAL,60.0,0.03399991989135742,0.1590794820950326,0.15907948209503267,5.234284506731294e-16,9,6.286165801084325,2.507222726660782,0.0,-1.0,0.0

@@ -1,0 +1,293 @@
+==============================================================================
+Case: pglib_opf_case5_pjm.m  (key=5_pjm, time_limit=60.0s)
+[info | PowerModels]: extending matpower format with data: areas 1x3
+[info | PowerModels]: removing 1 cost terms from generator 4: [4000.0, 0.0]
+[info | PowerModels]: removing 1 cost terms from generator 1: [1400.0, 0.0]
+[info | PowerModels]: removing 1 cost terms from generator 5: [1000.0, 0.0]
+[info | PowerModels]: removing 1 cost terms from generator 2: [1500.0, 0.0]
+[info | PowerModels]: removing 1 cost terms from generator 3: [3000.0, 0.0]
+[info | PowerModels]: updated generator 4 cost function with order 2 to a function of order 3: [0.0, 4000.0, 0.0]
+[info | PowerModels]: updated generator 1 cost function with order 2 to a function of order 3: [0.0, 1400.0, 0.0]
+[info | PowerModels]: updated generator 5 cost function with order 2 to a function of order 3: [0.0, 1000.0, 0.0]
+[info | PowerModels]: updated generator 2 cost function with order 2 to a function of order 3: [0.0, 1500.0, 0.0]
+[info | PowerModels]: updated generator 3 cost function with order 2 to a function of order 3: [0.0, 3000.0, 0.0]
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) Ultra 5 225H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 14 logical processors, using up to 14 threads
+
+Optimize a model with 18 rows, 22 columns and 54 nonzeros (Min)
+Model fingerprint: 0x97ee5a89
+Model has 5 linear objective coefficients
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [1e+03, 4e+03]
+  Bounds range     [4e-01, 6e+00]
+  RHS range        [3e+00, 4e+00]
+
+Presolve removed 14 rows and 14 columns
+Presolve time: 0.00s
+Presolved: 4 rows, 8 columns, 17 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.278054e+01   0.000000e+00      0s
+       6    1.7479897e+04   0.000000e+00   0.000000e+00      0s
+
+Solved in 6 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  1.747989693e+04
+
+User-callback calls 25, time in user-callback 0.00 sec
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) Ultra 5 225H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 14 logical processors, using up to 14 threads
+
+Optimize a model with 23 rows, 5 columns and 63 nonzeros (Min)
+Model fingerprint: 0xbd3b2e8b
+Model has 5 linear objective coefficients
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+03, 4e+03]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [4e-01, 1e+01]
+
+Presolve removed 21 rows and 0 columns
+Presolve time: 0.00s
+Presolved: 2 rows, 5 columns, 9 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.0000000e+04   3.273248e+00   0.000000e+00      0s
+       2    1.7479897e+04   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  1.747989693e+04
+
+User-callback calls 25, time in user-callback 0.00 sec
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) Ultra 5 225H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 14 logical processors, using up to 14 threads
+
+Optimize a model with 22 rows, 4 columns and 64 nonzeros (Min)
+Model fingerprint: 0xaf37f1e2
+Model has 4 linear objective coefficients and an objective constant of 40000
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+03, 3e+03]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [4e-01, 1e+01]
+
+Presolve removed 20 rows and 0 columns
+Presolve time: 0.00s
+Presolved: 2 rows, 5 columns, 9 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.0000000e+04   3.273248e+00   0.000000e+00      0s
+       2    1.7479897e+04   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.00 seconds (0.00 work units)
+Optimal objective  1.747989693e+04
+
+User-callback calls 25, time in user-callback 0.00 sec
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter Username
+Set parameter LicenseID to value 2863623
+Academic license - for non-commercial use only - expires 2027-09-12
+Set parameter TimeLimit to value 60
+Set parameter NonConvex to value 2
+Set parameter MIPGap to value 0.0001
+Set parameter NonConvex to value 2
+Set parameter MIPGap to value 0.0001
+Set parameter TimeLimit to value 60
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) Ultra 5 225H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 14 logical processors, using up to 14 threads
+
+Non-default parameters:
+TimeLimit  60
+NonConvex  2
+
+Optimize a model with 5 rows, 22 columns and 82 nonzeros (Max)
+Model fingerprint: 0x37f3a46c
+Model has 0 linear objective coefficients
+Model has 105 quadratic objective terms
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+01]
+  Objective range  [0e+00, 0e+00]
+  QObjective range [1e-01, 1e+01]
+  Bounds range     [1e-01, 3e+00]
+  RHS range        [1e+00, 1e+00]
+
+
+Continuous model is non-convex -- solving as a MIP
+
+
+Presolve time: 0.00s
+Presolved: 202 rows, 129 columns, 580 nonzeros
+Presolved model has 105 bilinear constraint(s)
+Variable types: 129 continuous, 0 integer (0 binary)
+Found heuristic solution: objective 0.1590795
+
+Root relaxation: objective 9.483911e-01, 83 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.94839    0   15    0.15908    0.94839   496%     -    0s
+     0     0    0.28302    0    1    0.15908    0.28302  77.9%     -    0s
+     0     0    0.28302    0    1    0.15908    0.28302  77.9%     -    0s
+     0     0    0.23536    0    1    0.15908    0.23536  47.9%     -    0s
+     0     0    0.20813    0    1    0.15908    0.20813  30.8%     -    0s
+     0     0    0.18939    0   14    0.15908    0.18939  19.1%     -    0s
+     0     0    0.18907    0   14    0.15908    0.18907  18.9%     -    0s
+     0     0    0.18582    0    1    0.15908    0.18582  16.8%     -    0s
+     0     0    0.18486    0    2    0.15908    0.18486  16.2%     -    0s
+     0     0    0.18486    0    2    0.15908    0.18486  16.2%     -    0s
+     0     2    0.18486    0    2    0.15908    0.18486  16.2%     -    0s
+H    4     2                       0.1590795    0.17752  11.6%   8.0    0s
+
+Cutting planes:
+  RLT: 16
+
+Explored 9 nodes (218 simplex iterations) in 0.03 seconds (0.01 work units)
+Thread count was 14 (of 14 available processors)
+
+Solution count 1: 0.159079 
+No other solutions better than 0.159079
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.590794820950e-01, best bound 1.590794820950e-01, gap 0.0000%
+
+User-callback calls 72, time in user-callback 0.00 sec
+  Activating project at `C:\Documents\VS Code\DCAttack`
+  0.001177 seconds (539 allocations: 27.266 KiB)
+17479.896925381025
+1
+
+==============================================================================
+PER-COMPONENT LP BOUNDS: pglib_opf_case5_pjm.m
+==============================================================================
+i        M[i]          
+1        0.20158193    
+2        0.12985728    
+3        0.20169891    
+4        0.16318847    
+5        0.62833188    
+6        0.22891234    
+7        0.16251215    
+8        0.34561581    
+9        0.15826383    
+10       0.27699243    
+11       0.20833333    
+12       0.12210783    
+13       0.5           
+14       2.5           
+15       0.18867925    
+16       0.58823529    
+17       0.20164034    
+18       0.5           
+19       2.5           
+20       0.16666667    
+21       0.58823529    
+22       0.19230769    
+
+No unbounded components.
+
+==============================================================================
+BOUNDED REDUCED QP RESULT: pglib_opf_case5_pjm.m
+==============================================================================
+termination status = OPTIMAL
+gamma_inc          = 0.15907948
+gamma_bd           = 0.15907948
+relative gap       = 5.23428e-16
+node count         = 9
+runtime            = 0.0340 s
+
+rho = 1/gamma      = 6.2861658
+sqrt(rho)          = 2.5072227
+
+--- feasibility verification (mu*) ---
+max(abs.(A' * mu*))  = 0
+c' * mu*             = -1
+minimum(mu*)         = 0
+
+Saved: results\reduced_qp_5_pjm.txt
+Appended: results\reduced_qp_summary.csv
