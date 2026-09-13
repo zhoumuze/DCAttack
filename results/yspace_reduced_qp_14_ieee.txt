@@ -1,0 +1,54 @@
+case = pglib_opf_case14_ieee.m (key=14_ieee)
+num_mu    = 44
+n_delta   = 11
+n_y_bound_LPs = 22
+mu_bound_time = 1.1055 s
+y_bound_time  = 0.2439 s
+
+--- y bounds ---
+  k=1  L=-0.3861003861003861  U=0.7142857142857143
+  k=2  L=-0.3861003861003861  U=0.7142857142857143
+  k=3  L=-0.3861003861003861  U=0.7508758137420423
+  k=4  L=-0.3861003861003861  U=0.7328743590481317
+  k=5  L=-0.5599974173739423  U=0.7142857142857143
+  k=6  L=-0.42937306444069906  U=0.9098455076147671
+  k=7  L=-0.3861003861003861  U=0.7142857142857143
+  k=8  L=-0.3861003861003861  U=0.7142857142857143
+  k=9  L=-0.3903698382781706  U=0.8271973094734039
+  k=10  L=-0.5646866937084858  U=0.8755559440933789
+  k=11  L=-0.3861003861003861  U=0.7142857142857143
+min_k L[k]        = -0.56468669
+max_k U[k]        = 0.90984551
+max_k (U[k]-L[k]) = 1.4402426
+avg_k (U[k]-L[k]) = 1.1844721
+
+--- Gurobi parsed diagnostics (new y-space model) ---
+  first_incumbent_found = 5.6122449
+  presolved_cols = 65
+  root_gap = 0.10964598141467406
+  presolved_rows = 25
+  root_relaxation_obj = 6.227605
+  bilinear_constraints = 11
+
+--- solve result (new y-space model) ---
+termination status = OPTIMAL
+gamma_inc          = 5.6122449
+gamma_bd           = 5.6122982
+relative gap       = 9.4897e-06
+node count         = 5
+solve runtime      = 0.0770 s
+qp wall time       = 0.9823 s
+rho = 1/gamma      = 0.17818182
+sqrt(rho)          = 0.42211588
+
+--- equivalence / feasibility verification ---
+max|A'mu*|              = 0
+|c'mu* + 1|             = 0
+min_i mu_i*             = 0
+max_k |y_k* - (B'mu*)_k| = 0
+sum_k (y_k*)^2          = 5.6122449
+(mu*)'BB'mu*            = 5.6122449
+
+--- old (mu-space) replica re-solve (root-bound comparison only) ---
+old replica status  = OPTIMAL
+old root relax obj  = 12.58347

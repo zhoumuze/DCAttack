@@ -1,0 +1,60 @@
+case = pglib_opf_case24_ieee_rts.m (key=24_ieee)
+num_mu    = 140
+n_delta   = 17
+n_y_bound_LPs = 34
+mu_bound_time = 0.7943 s
+y_bound_time  = 0.1044 s
+
+--- y bounds ---
+  k=1  L=-0.19864691695355605  U=0.32602784882126656
+  k=2  L=-0.16031645814868184  U=0.19216705582736204
+  k=3  L=-0.06925207756232685  U=0.18018018018017984
+  k=4  L=-0.1839038643848065  U=0.21850653771450373
+  k=5  L=-0.22509482680928136  U=0.6296986571164167
+  k=6  L=-0.06764848463430495  U=0.18018018018017998
+  k=7  L=-0.07170808035378998  U=0.18018018018017998
+  k=8  L=-0.19569471624266144  U=0.2738702171206582
+  k=9  L=-0.07359230784771988  U=0.18018018018017998
+  k=10  L=-0.07666334227093707  U=0.18018018018018
+  k=11  L=-0.05512679162072774  U=0.18018018018018006
+  k=12  L=-0.3703703703703703  U=0.2531645569620253
+  k=13  L=-0.15154915244367936  U=0.23578090295057275
+  k=14  L=-0.06710964159872089  U=0.18018018018017992
+  k=15  L=-0.06118707030556392  U=0.18018018018018
+  k=16  L=-0.07372611342661428  U=0.18018018018017998
+  k=17  L=-0.12673676106390286  U=0.18018018018018006
+min_k L[k]        = -0.37037037
+max_k U[k]        = 0.62969866
+max_k (U[k]-L[k]) = 0.85479348
+avg_k (U[k]-L[k]) = 0.36231439
+
+--- Gurobi parsed diagnostics (new y-space model) ---
+  first_incumbent_found = 0.5519032
+  presolved_cols = 156
+  root_gap = 0.6329133442241319
+  presolved_rows = 65
+  root_relaxation_obj = 0.9012101
+  bilinear_constraints = 17
+
+--- solve result (new y-space model) ---
+termination status = OPTIMAL
+gamma_inc          = 0.55190325
+gamma_bd           = 0.55190361
+relative gap       = 6.47168e-07
+node count         = 85
+solve runtime      = 0.0540 s
+qp wall time       = 0.3840 s
+rho = 1/gamma      = 1.8119118
+sqrt(rho)          = 1.3460727
+
+--- equivalence / feasibility verification ---
+max|A'mu*|              = 0
+|c'mu* + 1|             = 1.33227e-15
+min_i mu_i*             = 0
+max_k |y_k* - (B'mu*)_k| = 0
+sum_k (y_k*)^2          = 0.55190325
+(mu*)'BB'mu*            = 0.55190325
+
+--- old (mu-space) replica re-solve (root-bound comparison only) ---
+old replica status  = OPTIMAL
+old root relax obj  = 2.501814

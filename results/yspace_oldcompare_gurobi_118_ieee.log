@@ -1,0 +1,100 @@
+
+Gurobi 13.0.3 (win64) logging started Sat Sep 12 23:07:58 2026
+
+Set parameter LogFile to value "results\yspace_oldcompare_gurobi_118_ieee.log"
+
+Gurobi 13.0.3 (win64) logging started Sat Sep 12 23:07:59 2026
+
+Set parameter LogFile to value "results\yspace_oldcompare_gurobi_118_ieee.log"
+Warning for adding constraints: zero or small (< 1e-13) coefficients, ignored
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) Ultra 5 225H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 14 logical processors, using up to 14 threads
+
+Non-default parameters:
+TimeLimit  300
+NonConvex  2
+
+Optimize a model with 19 rows, 410 columns and 6430 nonzeros (Max)
+Model fingerprint: 0x15e91001
+Model has 0 linear objective coefficients
+Model has 66913 quadratic objective terms
+Coefficient statistics:
+  Matrix range     [2e-06, 7e+01]
+  Objective range  [0e+00, 0e+00]
+  QObjective range [3e-06, 4e+02]
+  Bounds range     [1e-02, 1e+01]
+  RHS range        [1e+00, 1e+00]
+
+
+Continuous model is non-convex -- solving as a MIP
+
+
+Presolve added 3 rows and 3 columns
+Presolve time: 0.11s
+Presolved: 133483 rows, 67328 columns, 339981 nonzeros
+Presolved model has 66913 bilinear constraint(s)
+Variable types: 67328 continuous, 0 integer (0 binary)
+Found heuristic solution: objective 1.7247362
+
+Deterministic concurrent LP optimizer: primal and dual simplex (primal and dual model)
+Showing primal log only...
+
+Root relaxation presolved: 99752 rows, 66961 columns, 305884 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   17598    7.3082635e+00   0.000000e+00   5.085456e+04      5s
+Concurrent spin time: 0.02s
+
+Solved with dual simplex
+
+Root relaxation: objective 1.002131e+01, 43600 iterations, 6.80 seconds (3.84 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   10.02131    0 1378    1.72474   10.02131   481%     -    7s
+     0     0    9.31904    0 1266    1.72474    9.31904   440%     -   26s
+     0     0    9.13348    0 1328    1.72474    9.13348   430%     -   38s
+     0     0    8.83700    0 1543    1.72474    8.83700   412%     -   42s
+     0     0    8.82535    0 1575    1.72474    8.82535   412%     -   61s
+     0     0    8.64855    0 1136    1.72474    8.64855   401%     -   66s
+     0     0    8.26809    0 1478    1.72474    8.26809   379%     -   80s
+     0     0    8.26809    0 1460    1.72474    8.26809   379%     -   83s
+     0     0    7.89257    0 1806    1.72474    7.89257   358%     -  101s
+     0     0    7.53225    0 1593    1.72474    7.53225   337%     -  126s
+     0     0    7.53225    0 2106    1.72474    7.53225   337%     -  130s
+     0     0    7.37983    0 1829    1.72474    7.37983   328%     -  170s
+     0     0    7.37983    0 1127    1.72474    7.37983   328%     -  174s
+     0     0    7.25224    0 1127    1.72474    7.25224   320%     -  183s
+     0     0    7.22685    0 3288    1.72474    7.22685   319%     -  186s
+     0     0    7.10919    0 1442    1.72474    7.10919   312%     -  197s
+     0     0    7.10919    0 1432    1.72474    7.10919   312%     -  199s
+     0     0    7.05847    0 3711    1.72474    7.05847   309%     -  215s
+H    0     0                       2.0817271    7.05847   239%     -  226s
+H    0     0                       2.0817272    7.05847   239%     -  228s
+H    0     0                       2.2276682    7.05847   217%     -  235s
+     0     0    6.50683    0 4072    2.22767    6.50683   192%     -  281s
+     0     0    6.50683    0 4062    2.22767    6.50683   192%     -  282s
+     0     0    6.45409    0 4265    2.22767    6.45409   190%     -  284s
+     0     0    6.45409    0 1441    2.22767    6.45409   190%     -  285s
+     0     0    6.45409    0 1405    2.22767    6.45409   190%     -  286s
+     0     0          -    0         2.22767    6.45409   190%     -  300s
+
+Cutting planes:
+  RLT: 410
+  BQP: 258
+
+Explored 1 nodes (56021 simplex iterations) in 300.10 seconds (209.22 work units)
+Thread count was 14 (of 14 available processors)
+
+Solution count 4: 2.22767 2.22767 2.08173 1.72474 
+
+Time limit reached
+Best objective 2.227667956516e+00, best bound 6.454092327660e+00, gap 189.7242%
+
+User-callback calls 18586, time in user-callback 0.08 sec

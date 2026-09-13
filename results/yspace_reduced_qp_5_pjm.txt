@@ -1,0 +1,46 @@
+case = pglib_opf_case5_pjm.m (key=5_pjm)
+num_mu    = 22
+n_delta   = 3
+n_y_bound_LPs = 6
+mu_bound_time = 1.0595 s
+y_bound_time  = 0.2206 s
+
+--- y bounds ---
+  k=1  L=-0.10550685238728831  U=0.223017867362999
+  k=2  L=-0.1  U=0.20164033730479475
+  k=3  L=-0.1  U=0.30188317259780467
+min_k L[k]        = -0.10550685
+max_k U[k]        = 0.30188317
+max_k (U[k]-L[k]) = 0.40188317
+avg_k (U[k]-L[k]) = 0.34401608
+
+--- Gurobi parsed diagnostics (new y-space model) ---
+  first_incumbent_found = 0.1590795
+  presolved_cols = 30
+  root_gap = NaN
+  presolved_rows = 12
+  root_relaxation_obj = NaN
+  bilinear_constraints = 3
+
+--- solve result (new y-space model) ---
+termination status = OPTIMAL
+gamma_inc          = 0.15907946
+gamma_bd           = 0.15907948
+relative gap       = 1.34608e-07
+node count         = 1
+solve runtime      = 0.0200 s
+qp wall time       = 0.8555 s
+rho = 1/gamma      = 6.2861666
+sqrt(rho)          = 2.5072229
+
+--- equivalence / feasibility verification ---
+max|A'mu*|              = 1.659e-09
+|c'mu* + 1|             = 2.0177e-08
+min_i mu_i*             = 0
+max_k |y_k* - (B'mu*)_k| = 3.67343e-10
+sum_k (y_k*)^2          = 0.15907946
+(mu*)'BB'mu*            = 0.15907946
+
+--- old (mu-space) replica re-solve (root-bound comparison only) ---
+old replica status  = OPTIMAL
+old root relax obj  = 0.9483911

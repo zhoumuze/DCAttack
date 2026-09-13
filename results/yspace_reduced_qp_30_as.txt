@@ -1,0 +1,64 @@
+case = pglib_opf_case30_as.m (key=30_as)
+num_mu    = 94
+n_delta   = 21
+n_y_bound_LPs = 42
+mu_bound_time = 0.4610 s
+y_bound_time  = 0.0930 s
+
+--- y bounds ---
+  k=1  L=-0.6009615384615385  U=0.7186155553010884
+  k=2  L=-0.6009615384615385  U=0.8005669882382811
+  k=3  L=-1.8524834767736411  U=2.564102564102563
+  k=4  L=-3.2530158808081233  U=7.229481433830499
+  k=5  L=-0.6865386417124868  U=0.6596306068601583
+  k=6  L=-1.6292620809672422  U=2.58350540800555
+  k=7  L=-3.084293410683961  U=2.2471910112359526
+  k=8  L=-2.9551924968106236  U=4.730490296241718
+  k=9  L=-0.6009615384615384  U=0.6705959156203373
+  k=10  L=-1.6750418760469012  U=3.0211480362537664
+  k=11  L=-1.5865174795618031  U=3.4583694519801593
+  k=12  L=-1.9000557812727583  U=3.425023352864764
+  k=13  L=-2.572795919551582  U=6.5048300614057855
+  k=14  L=-1.0433860851146148  U=1.196855500914705
+  k=15  L=-1.157135488323733  U=1.1113358677973304
+  k=16  L=-2.8409090909090917  U=4.774393025944885
+  k=17  L=-1.5624812297258108  U=3.1369248790313335
+  k=18  L=-5.128205128205126  U=7.999999999999997
+  k=19  L=-2.556638021120114  U=2.441498975637332
+  k=20  L=-2.1844913783186404  U=4.351197397762083
+  k=21  L=-0.6994078237413024  U=0.6596306068601583
+min_k L[k]        = -5.1282051
+max_k U[k]        = 8
+max_k (U[k]-L[k]) = 13.128205
+avg_k (U[k]-L[k]) = 4.9741011
+
+--- Gurobi parsed diagnostics (new y-space model) ---
+  first_incumbent_found = 69.3152276
+  presolved_cols = 143
+  root_gap = 2.0608627764211507
+  presolved_rows = 54
+  root_relaxation_obj = 212.1644
+  bilinear_constraints = 21
+
+--- solve result (new y-space model) ---
+termination status = OPTIMAL
+gamma_inc          = 69.315228
+gamma_bd           = 69.315229
+relative gap       = 2.08599e-08
+node count         = 62682
+solve runtime      = 2.8640 s
+qp wall time       = 3.2907 s
+rho = 1/gamma      = 0.014426844
+sqrt(rho)          = 0.1201118
+
+--- equivalence / feasibility verification ---
+max|A'mu*|              = 1.33519e-16
+|c'mu* + 1|             = 1.11022e-16
+min_i mu_i*             = 0
+max_k |y_k* - (B'mu*)_k| = 0
+sum_k (y_k*)^2          = 69.315228
+(mu*)'BB'mu*            = 69.315228
+
+--- old (mu-space) replica re-solve (root-bound comparison only) ---
+old replica status  = OPTIMAL
+old root relax obj  = 638.4713

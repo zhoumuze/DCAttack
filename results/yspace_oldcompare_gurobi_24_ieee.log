@@ -1,0 +1,70 @@
+
+Gurobi 13.0.3 (win64) logging started Sat Sep 12 22:55:53 2026
+
+Set parameter LogFile to value "results\yspace_oldcompare_gurobi_24_ieee.log"
+
+Gurobi 13.0.3 (win64) logging started Sat Sep 12 22:55:53 2026
+
+Set parameter LogFile to value "results\yspace_oldcompare_gurobi_24_ieee.log"
+Warning for adding constraints: zero or small (< 1e-13) coefficients, ignored
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) Ultra 5 225H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 14 logical processors, using up to 14 threads
+
+Non-default parameters:
+TimeLimit  300
+NonConvex  2
+
+Optimize a model with 32 rows, 140 columns and 2564 nonzeros (Max)
+Model fingerprint: 0x03b0dc7e
+Model has 0 linear objective coefficients
+Model has 3081 quadratic objective terms
+Coefficient statistics:
+  Matrix range     [2e-04, 3e+01]
+  Objective range  [0e+00, 0e+00]
+  QObjective range [6e-04, 7e+01]
+  Bounds range     [1e-01, 2e+01]
+  RHS range        [1e+00, 1e+00]
+
+
+Continuous model is non-convex -- solving as a MIP
+
+
+Presolve removed 6 rows and 18 columns
+Presolve time: 0.00s
+Presolved: 6111 rows, 3205 columns, 16457 nonzeros
+Presolved model has 3081 bilinear constraint(s)
+Variable types: 3205 continuous, 0 integer (0 binary)
+Found heuristic solution: objective 0.5519032
+
+Root relaxation: objective 2.501814e+00, 1792 iterations, 0.01 seconds (0.04 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    2.50181    0  231    0.55190    2.50181   353%     -    0s
+     0     0    1.38878    0  169    0.55190    1.38878   152%     -    0s
+     0     0    1.37555    0  169    0.55190    1.37555   149%     -    0s
+     0     0    1.22363    0  169    0.55190    1.22363   122%     -    0s
+     0     0    1.20391    0  170    0.55190    1.20391   118%     -    0s
+     0     0    1.20391    0  170    0.55190    1.20391   118%     -    0s
+     0     0    1.20391    0  170    0.55190    1.20391   118%     -    0s
+     0     2    1.20391    0  170    0.55190    1.20391   118%     -    0s
+H   67    32                       0.5519032    0.71193  29.0%  64.5    0s
+H   87    32                       0.5519033    0.68393  23.9%  59.7    0s
+*  133    26               9       0.5519036    0.67271  21.9%  52.2    0s
+
+Cutting planes:
+  RLT: 32
+  BQP: 35
+
+Explored 189 nodes (10696 simplex iterations) in 0.74 seconds (0.87 work units)
+Thread count was 14 (of 14 available processors)
+
+Solution count 1: 0.551904 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.519032546060e-01, best bound 5.519035507622e-01, gap 0.0001%
+
+User-callback calls 131, time in user-callback 0.00 sec

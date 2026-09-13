@@ -1,0 +1,54 @@
+
+Gurobi 13.0.3 (win64) logging started Sat Sep 12 22:54:17 2026
+
+Set parameter LogFile to value "results\yspace_gurobi_5_pjm.log"
+
+Gurobi 13.0.3 (win64) logging started Sat Sep 12 22:54:17 2026
+
+Set parameter LogFile to value "results\yspace_gurobi_5_pjm.log"
+Gurobi Optimizer version 13.0.3 build v13.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) Ultra 5 225H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 14 logical processors, using up to 14 threads
+
+Non-default parameters:
+TimeLimit  300
+NonConvex  2
+
+Optimize a model with 8 rows, 25 columns and 115 nonzeros (Max)
+Model fingerprint: 0xc9aaf3bb
+Model has 0 linear objective coefficients
+Model has 3 quadratic objective terms
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+01]
+  Objective range  [0e+00, 0e+00]
+  QObjective range [2e+00, 2e+00]
+  Bounds range     [1e-01, 3e+00]
+  RHS range        [1e+00, 1e+00]
+
+
+Continuous model is non-convex -- solving as a MIP
+
+
+Presolve time: 0.02s
+Presolved: 12 rows, 30 columns, 125 nonzeros
+Presolved model has 3 bilinear constraint(s)
+Variable types: 30 continuous, 0 integer (0 binary)
+Found heuristic solution: objective 0.1590795
+
+Root relaxation: interrupted, 10 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0          -    0         0.15908    0.15908  0.00%     -    0s
+
+Explored 1 nodes (10 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 14 (of 14 available processors)
+
+Solution count 1: 0.159079 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.590794611308e-01, best bound 1.590794825443e-01, gap 0.0000%
+
+User-callback calls 45, time in user-callback 0.00 sec

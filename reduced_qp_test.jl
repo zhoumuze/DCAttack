@@ -165,7 +165,10 @@ zero_nonlinear_costs!(basic_network_data)
 pm_result, model, model_fl, sys = solve_dcopf(basic_network_data)
 A, B, c = copy(sys[:A]), copy(sys[:B]), copy(sys[:c])
 
-Mvec, unbounded_idx, other_idx = component_upper_bounds(A, c)
+preprocessing_time = @elapsed begin
+    global Mvec, unbounded_idx, other_idx = component_upper_bounds(A, c)
+end
+@printf("\npreprocessing time (all M[i] LPs) = %.4f s\n", preprocessing_time)
 
 println()
 println("="^78)
@@ -211,6 +214,7 @@ csvpath = joinpath(results_dir, "reduced_qp_summary.csv")
 open(logpath, "w") do io
     println(io, "case = $case (key=$casekey)")
     println(io, "num_mu = $num_mu")
+    @printf(io, "preprocessing time (all M[i] LPs) = %.4f s\n", preprocessing_time)
     println(io)
     println(io, "--- per-component LP bounds M[i] = max mu[i] s.t. A'mu=0, c'mu=-1, mu>=0 ---")
     for i in 1:num_mu
